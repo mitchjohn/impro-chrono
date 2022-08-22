@@ -8,6 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Scoreboard />
+        <p>Test from Michel-Jean</p>
       </header>
     </div>
   );
