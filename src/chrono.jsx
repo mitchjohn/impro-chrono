@@ -3,13 +3,10 @@ import {Timer} from "./timer";
 
 const isNumber = n => !isNaN(parseFloat(n)) && !isNaN(n - 0);
 
-
 export const Chrono = () => {
     const [numberOfSeconds, setNumberOfSeconds] = useState(0)
     const [answerIsANumber, setAnswerIsANumber] = useState(false)
     const [isTimerRunning, setIsTimerRunning] = useState(false)
-
-    console.log(numberOfSeconds);
 
     const onInputChange = (event) => {
         const value = event.target.value
@@ -32,8 +29,10 @@ export const Chrono = () => {
         setIsTimerRunning(false)
     }
 
+    const timerReachedZero = () => stopTimer()
+
     return <>
-        {isTimerRunning && <p>Timer is running <Timer startTimer={numberOfSeconds}/> !!!</p>}
+        {isTimerRunning && <p>Timer is running <Timer startTimer={numberOfSeconds} timerReachedZero={timerReachedZero}/> !!!</p>}
         <input onChange={onInputChange}></input>
         {!answerIsANumber && <p style={{color: 'red'}}>Votre valeur doit être un nombre</p>}
         <button disabled={isTimerRunning} onClick={startTimer}>Start</button>
