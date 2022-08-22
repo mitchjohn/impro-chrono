@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {Input} from "./input";
+import {Chrono} from "./chrono";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <Input />
+        <Chrono />
         <a
           className="App-link"
           href="https://reactjs.org"
